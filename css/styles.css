@@ -1,3 +1,11 @@
 .total {
   display: none;
 }
+
+#confirmPurchase {
+  display: none;
+}
+
+.receipt {
+  display: none;
+}
