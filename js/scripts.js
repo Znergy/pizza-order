@@ -98,8 +98,10 @@ $(document).ready(function() {
     
     quantity = $("#quantityForm input[type='radio']:checked").val();
     
-    var pizza = new Pizza(size, quantity); // create new pizza object w/ size argument and quantity argument
+    // logic to use same button to save multiple orders
     
+    var pizza = new Pizza(size, quantity); // create new pizza object w/ size argument and quantity argument
+      
     pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
     totalCost = pizza.calculateSizeCost(pizza.quantity) + pizza.calculateToppingCost(); // get total cost of toppings and size
@@ -115,8 +117,8 @@ $(document).ready(function() {
   $("#confirmPurchase").click(function() {
     
     $(".ulToppings").empty();
-    $("#pizzaSize").text("Pizza Size: " + size);
-    $("#pizzaQuantity").text("Quantity: " + quantity);
+    $(".pizzaSize").text("Pizza size: " + size);
+    $(".pizzaQuantity").text("Quantity: " + quantity);
     
     for(i=0; i < toppingArray.length; i++) {
       var value = "";
@@ -125,7 +127,7 @@ $(document).ready(function() {
         $(".ulToppings").append("<li>" + value + "</li>");
       }
     }
-    $("#totalPrice").text("Total Cost: $ " + totalCost);
+    $(".totalPrice").text("Total Cost: $ " + totalCost);
     $(".receipt").show();
   });
 });

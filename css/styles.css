@@ -75,6 +75,15 @@ body {
   list-style-type: none;
 }
 
+.modal h4 {
+  margin-left: 40px;
+}
+
+
+
+.modal-title {
+  text-align: center;
+}
 
 
 .total {
