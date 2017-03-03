@@ -47,12 +47,20 @@ Pizza.prototype.calculatePrice = function() {
   
   // size has been accounted for..
   
-  if (this.toppings.length === 3) {
-    totalCost = totalCost + 1.50;
-  } else if (this.toppings.length === 2) {
+  if (this.toppings.length === 6) {
+    totalCost = totalCost + 3;
+  } else if (this.toppings.length === 5) {
+    totalCost = totalCost + 2.5;
+  } else if (this.toppings.length === 4) {
+    totalCost = totalCost + 2;
+  } else if (this.toppings.length === 3) {
+    totalCost = totalCost + 1.5;
+  } else if (this.toppings.length === 3) {
     totalCost = totalCost + 1;
   } else if (this.toppings.length === 1) {
     totalCost = totalCost + 0.50;
+  } else {
+    totalCost = 0;
   }
   
   // topping amount has been accounted for..
