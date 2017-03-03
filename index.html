@@ -26,7 +26,7 @@
             <img src="img/pizzaicon.png" class="img-responsive" />
           </div>
           <div class="col-md-6">
-            <h1>Pizza Order</h1>
+            <h1>Ryan's Pizzeria</h1>
           </div>
         </div>
       </div>
@@ -80,10 +80,9 @@
           <h4>To confirm your order, hit the 'Confirm Order' button</h4>
           <ul>
             <li><button id="checkPrice" type="button" class="btn btn-primary">Confirm Order</button></li>
-            <li><h3 class="total"></h3></li>
+            <li><button id="confirmPurchase" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Show Receipt</button></li>
           </ul>
         </div>
-        <button id="confirmPurchase" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Show Receipt</button>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -93,13 +92,13 @@
               </div>
               <div class="modal-body">
                 <ul>
-                <li id="pizzaSize">Pizza Size: Small</li>
-                <li>Pizza Toppings:</li>
+                  <li id="pizzaSize"></li>
+                  <li>Pizza Toppings:</li>
                   <ul class="ulToppings">
-
+                    
                   </ul>
-                <li id="totalPrice"></li>
-              </ul>
+                  <li id="totalPrice"></li>
+                </ul>
               </div>
               <div class="modal-footer">
                 <button type="button" id="closeModal" class="btn btn-default" data-dismiss="modal">Close</button>

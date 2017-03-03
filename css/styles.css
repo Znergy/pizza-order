@@ -58,6 +58,10 @@ body {
 /*** Submit ***/
 .submit-div ul {
   list-style-type: none;
+  margin-right: 20px;;
+}
+
+.submit-div li {
   display: inline;
 }
 
@@ -66,7 +70,10 @@ body {
   text-align: center;
 }
 
-
+/*** Modal ***/
+.modal ul {
+  list-style-type: none;
+}
 
 
 
