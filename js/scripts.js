@@ -112,6 +112,7 @@ $(document).ready(function() {
   
   $("#confirmPurchase").click(function() {
     
+    $(".ulToppings").empty();
     $("#pizzaSize").text("Pizza Size: " + size);
     
     for(i=0; i < toppingArray.length; i++) {

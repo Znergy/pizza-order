@@ -77,13 +77,11 @@
           </div>
         </div>
         <div class="submit-div">
-          <h4>To check price, hit 'Check Price' button</h4>
-          <button id="checkPrice" type="button" class="btn btn-primary">Check Price</button>
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="total"></h3>
-            </div>
-          </div>
+          <h4>To confirm your order, hit the 'Confirm Order' button</h4>
+          <ul>
+            <li><button id="checkPrice" type="button" class="btn btn-primary">Confirm Order</button></li>
+            <li><h3 class="total"></h3></li>
+          </ul>
         </div>
         <button id="confirmPurchase" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Show Receipt</button>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
@@ -104,8 +102,7 @@
               </ul>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Purchase</button>
+                <button type="button" id="closeModal" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
