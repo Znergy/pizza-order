@@ -1,3 +1,12 @@
+/* Application: Pizza Order
+* File Name: scripts.js
+* Programmer: Ryan Jones
+* Version: 03/03/2017
+*/
+
+
+/**** Back-End Logic ****/
+
 class Pizza {
     constructor(size) {
         this.toppings = [];
@@ -21,6 +30,8 @@ class Pizza {
       this.size = size;
     }
 }
+
+// calculate price function (could also just be inside the pizza class)
 
 Pizza.prototype.calculatePrice = function() {
   var totalCost = 0;
@@ -54,8 +65,7 @@ Pizza.prototype.calculatePrice = function() {
 
 
 
-
-// front end logic
+/**** Front End Logic ****/
 
 var idArray = ["checkbox1", "checkbox2", "checkbox3"]; // id's for checkboxes
 var toppingArray = []; // empty array to populate with values of checkboxes
@@ -76,7 +86,7 @@ var toppingList = pizza.getToppings(); // returns ["pepperoni", "sausage", "hamb
 
 var totalPrice = pizza.calculatePrice(); // tally up the total cost
 
-
+// display total price, toppings, etc in the receipt
 
 
 
