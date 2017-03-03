@@ -8,33 +8,44 @@
 /**** Back-End Logic ****/
 
 class Pizza {
-    constructor(size) {
+  constructor(size, quantity) {
         this.toppings = [];
         this.size = size;
-    }
+        this.quantity = quantity;
+  }
     
-    getSize() {
-        return this.size;
-    }
-    
-    getToppings() {
-        return this.toppings;
-    }
-    
-    // passing an array of toppings
-    setToppings(toppings) {
-      this.toppings = toppings;
-    }
+  // getters
+  getSize() {
+    return this.size;
+  }
   
-    setSize(size) {
-      this.size = size;
-    }
+  getQuantity() {
+    return this.quantity;
+  }
+
+  getToppings() {
+    return this.toppings;
+  }
+
+  // setters
+  setToppings(toppings) {
+    this.toppings = toppings;
+  }
+
+  setQuantity(quantity) {
+    this.quantity = quantity;
+  }
+
+  setSize(size) {
+    this.size = size;
+  }
 }
 
 // calculate price function (could also just be inside the pizza class)
 
-Pizza.prototype.calculatePrice = function() {
+Pizza.prototype.calculateSizeCost = function(quantity) {
   var totalCost = 0;
+  
   if (this.size === "small") {
     totalCost = 5;
   } else if (this.size === "medium") {
@@ -44,6 +55,12 @@ Pizza.prototype.calculatePrice = function() {
   } else if (this.size === "extra-large") {
     totalCost = 12; 
   }
+  
+  return totalCost * quantity;
+}
+
+Pizza.prototype.calculateToppingCost = function() {
+  var totalCost = 0;
   
   // size has been accounted for..
   
@@ -78,6 +95,7 @@ $(document).ready(function() {
   var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
   var toppingArray = []; // empty array to populate with values of checkboxes
   var totalCost = 0;
+  var quantity = 0;
   var size = "";
   
   $("#checkPrice").click(function() {
@@ -96,11 +114,13 @@ $(document).ready(function() {
     
     size = $("#sizeForm input[type='radio']:checked").val();
     
-    var pizza = new Pizza(size); // create new pizza object w/ size argument
+    quantity = $("#quantityForm input[type='radio']:checked").val();
+    
+    var pizza = new Pizza(size, quantity); // create new pizza object w/ size argument and quantity argument
     
     pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
-    totalCost = pizza.calculatePrice();
+    totalCost = pizza.calculateSizeCost(pizza.quantity) + pizza.calculateToppingCost(); // get total cost of toppings and size
     
     console.log(totalCost);
     
