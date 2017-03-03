@@ -89,6 +89,30 @@ var totalPrice = pizza.calculatePrice(); // tally up the total cost
 // display total price, toppings, etc in the receipt
 
 
+$(document).ready(function() {
+  
+  var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
+  var toppingArray = []; // empty array to populate with values of checkboxes
+  
+  $("#submit").click(function() {
+    
+    // for each to cycle through checkboxes, save their values, and push each value to toppingArray (only if the checkbox has a value)
+    idArray.forEach(function(id) {
+      var currentBox = ("#" + id).toString(); // 1st loop: currentBox = #checkbox1 
+      var value = $(currentBox).val();
+      var isChecked = $(currentBox).is(':checked');
+      if (isChecked === true) {
+        toppingArray.push(value);
+      }
+    });   
+    
+    
+    
+    
+    $(".total").show();
+  });
+});
+
 
 
 
