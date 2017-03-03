@@ -55,12 +55,10 @@ Pizza.prototype.calculatePrice = function() {
     totalCost = totalCost + 2;
   } else if (this.toppings.length === 3) {
     totalCost = totalCost + 1.5;
-  } else if (this.toppings.length === 3) {
+  } else if (this.toppings.length === 2) {
     totalCost = totalCost + 1;
   } else if (this.toppings.length === 1) {
     totalCost = totalCost + 0.50;
-  } else {
-    totalCost = 0;
   }
   
   // topping amount has been accounted for..
@@ -96,13 +94,15 @@ $(document).ready(function() {
       }
     });
     
-    size = $("#size").val(); // take size value (small, medium, etc)
+    size = $("#sizeForm input[type='radio']:checked").val();
     
     var pizza = new Pizza(size); // create new pizza object w/ size argument
     
     pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
     totalCost = pizza.calculatePrice();
+    
+    console.log(totalCost);
     
     $(".total").text("Total Cost: $ " + totalCost);
     

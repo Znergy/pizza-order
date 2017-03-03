@@ -4,6 +4,10 @@
 * Version: 03/03/2017
 */
 
+body {
+ 
+}
+
 /*** Jumbotron ***/
 
 .jumbotron img {
@@ -30,6 +34,40 @@
 .toppings ul {
   list-style-type: none;
 }
+
+/*** Size ***/
+
+.size select {
+  margin-bottom: 10px;
+}
+
+.size h4 {
+  padding-left: 25px;
+}
+
+.size ul {
+  list-style-type: none;
+  margin-left: -9px;
+  padding-bottom: 10px;
+}
+
+#ulSizes {
+  list-style-type: none;
+}
+
+/*** Submit ***/
+.submit-div {
+  
+}
+
+/*** Footer ***/
+.footer {
+  text-align: center;
+}
+
+
+
+
 
 .total {
   display: none;
