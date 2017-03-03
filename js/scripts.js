@@ -59,32 +59,12 @@ Pizza.prototype.calculateSizeCost = function(quantity) {
   return totalCost * quantity;
 }
 
+// refactored about 20 lines here
 Pizza.prototype.calculateToppingCost = function() {
   var totalCost = 0;
-  
-  // size has been accounted for..
-  
-  if (this.toppings.length === 6) {
-    totalCost = totalCost + 3;
-  } else if (this.toppings.length === 5) {
-    totalCost = totalCost + 2.5;
-  } else if (this.toppings.length === 4) {
-    totalCost = totalCost + 2;
-  } else if (this.toppings.length === 3) {
-    totalCost = totalCost + 1.5;
-  } else if (this.toppings.length === 2) {
-    totalCost = totalCost + 1;
-  } else if (this.toppings.length === 1) {
-    totalCost = totalCost + 0.50;
-  }
-  
-  // topping amount has been accounted for..
-  
+  totalCost = this.toppings.length * 0.50; // since the price never changes
   return totalCost; // send the total back
-  
 }
-
-
 
 
 
@@ -92,7 +72,9 @@ Pizza.prototype.calculateToppingCost = function() {
 
 $(document).ready(function() {
   
-  var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
+  // id's for checkboxes
+  var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6", "checkbox7", "checkbox8", "checkbox9"];
+  
   var toppingArray = []; // empty array to populate with values of checkboxes
   var totalCost = 0;
   var quantity = 0;
@@ -134,6 +116,7 @@ $(document).ready(function() {
     
     $(".ulToppings").empty();
     $("#pizzaSize").text("Pizza Size: " + size);
+    $("#pizzaQuantity").text("Quantity: " + quantity);
     
     for(i=0; i < toppingArray.length; i++) {
       var value = "";
