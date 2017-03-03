@@ -4,6 +4,33 @@
 * Version: 03/03/2017
 */
 
+/*** Jumbotron ***/
+
+.jumbotron img {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.jumbotron h1 {
+  padding-top: 35px;
+  font-size: 5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*** Toppings ***/
+
+.toppings footer {
+  padding-left: 10px;
+  margin-top: -8px;
+  padding-bottom: 20px;
+}
+
+.toppings ul {
+  list-style-type: none;
+}
+
 .total {
   display: none;
 }

@@ -8,7 +8,7 @@ Pizza Order, is a web application I built using JavaScript and JQuery. The user 
 
 ## Specs:
 | Behavior      | Input Value  | Output Value |
-| ------------- |:-------------:|-------:|
+| ------------- |:-------------:|-------|
 | When a user selects a topping, topping is added to topping array | "pepperoni" | pizza.toppings = ["pepperoni"] |
 | When a user selects multiple toppings, toppings are added to the topping array | "sausage", "hamburger" | pizza.toppings = ["sausage", "hamburger"] |
 | When a user selects a pizza size, pizza object is updated | "small" | pizza.size = "small" |
