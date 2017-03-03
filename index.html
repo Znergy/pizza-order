@@ -85,12 +85,16 @@
             </div>
           </div>
         </div>
-        <button id="confirmPurchase" type="button" class="btn btn-primary">Show Receipt</button>
-        <div class="receipt">
-          <h2>Receipt</h2>
-          <div class="row">
-            <div class="col-md-12">
-              <ul>
+        <button id="confirmPurchase" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Show Receipt</button>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="purchaseLabel">Receipt</h4>
+              </div>
+              <div class="modal-body">
+                <ul>
                 <li id="pizzaSize">Pizza Size: Small</li>
                 <li>Pizza Toppings:</li>
                   <ul class="ulToppings">
@@ -98,6 +102,11 @@
                   </ul>
                 <li id="totalPrice"></li>
               </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Purchase</button>
+              </div>
             </div>
           </div>
         </div>
@@ -118,6 +127,8 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Custom JavaScript -->
     <script type="text/javascript" src="js/scripts.js"></script>
   </body>
