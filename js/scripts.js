@@ -67,26 +67,15 @@ Pizza.prototype.calculatePrice = function() {
 
 /**** Front End Logic ****/
 
-var idArray = ["checkbox1", "checkbox2", "checkbox3"]; // id's for checkboxes
-var toppingArray = []; // empty array to populate with values of checkboxes
-
-// for each to cycle through checkboxes, save their values, and push each value to toppingArray (only if the checkbox has a value)
-idArray.forEach(function(id) {
-  var value = $("#" + id).val();
-  if(value != "") {
-    toppingArray.push(value);
-  }
-});
-
-var pizza = new Pizza("large"); // new pizza instance
-
-pizza.setToppings(toppingArray); // saves toppingArray in the pizza.toppings array
-
-var toppingList = pizza.getToppings(); // returns ["pepperoni", "sausage", "hamburger"]
-
-var totalPrice = pizza.calculatePrice(); // tally up the total cost
-
-// display total price, toppings, etc in the receipt
+//var pizza = new Pizza("large"); // new pizza instance
+//
+//pizza.setToppings(toppingArray); // saves toppingArray in the pizza.toppings array
+//
+//var toppingList = pizza.getToppings(); // returns ["pepperoni", "sausage", "hamburger"]
+//
+//var totalPrice = pizza.calculatePrice(); // tally up the total cost
+//
+//// display total price, toppings, etc in the receipt
 
 
 $(document).ready(function() {
@@ -94,7 +83,9 @@ $(document).ready(function() {
   var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
   var toppingArray = []; // empty array to populate with values of checkboxes
   
-  $("#submit").click(function() {
+  $("#checkPrice").click(function() {
+    
+    toppingArray = [];
     
     // for each to cycle through checkboxes, save their values, and push each value to toppingArray (only if the checkbox has a value)
     idArray.forEach(function(id) {
@@ -104,12 +95,33 @@ $(document).ready(function() {
       if (isChecked === true) {
         toppingArray.push(value);
       }
-    });   
+    });
     
+    var size = $("#size").val(); // take size value (small, medium, etc)
     
+    var pizza = new Pizza(size); // create new pizza object w/ size argument
     
+    pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
-    $(".total").show();
+    var totalCost = pizza.calculatePrice();
+    
+    console.log("Pizza Size: " + pizza.size + ". Pizza toppings: " + pizza.toppings[0] + ", " + pizza.toppings[1] + ", " + pizza.toppings[2]);
+    
+    $(".total").text("Total Cost: $ " + totalCost);
+    
+    $("h3.total").show();
+  });
+  
+  $("#confirmPurchase").click(function() {
+    
+    for(i=0; i < toppingArray.length; i++) {
+      var value = "";
+      if(toppingArray[i] != "") {
+        value = toppingArray[i];
+        $(".ulToppings").append("<li>" + value + "</li>");
+      }
+    }
+    $("#receipt").show();
   });
 });
 
