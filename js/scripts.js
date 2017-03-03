@@ -22,6 +22,34 @@ class Pizza {
     }
 }
 
+Pizza.prototype.calculatePrice = function() {
+  var totalCost = 0;
+  if (this.size === "small") {
+    totalCost = 5;
+  } else if (this.size === "medium") {
+    totalCost = 7;
+  } else if (this.size === "large") {
+    totalCost = 10;
+  } else if (this.size === "extra-large" || this.size === "extra large") {
+    totalCost = 12; 
+  }
+  
+  // size has been accounted for..
+  
+  if (this.toppings.length === 3) {
+    totalCost = totalCost + 1.50;
+  } else if (this.toppings.length === 2) {
+    totalCost = totalCost + 1;
+  } else if (this.toppings.length === 1) {
+    totalCost = totalCost + 0.50;
+  }
+  
+  // topping amount has been accounted for..
+  
+  return totalCost; // send the total back
+  
+}
+
 
 
 
@@ -42,9 +70,12 @@ idArray.forEach(function(id) {
 
 var pizza = new Pizza("large"); // new pizza instance
 
-pizza.toppings = toppingArray; // set toppings to our topping array
+pizza.setToppings(toppingArray); // saves toppingArray in the pizza.toppings array
 
-pizza.getToppings(); // returns ["pepperoni", "sausage", "hamburger"]
+var toppingList = pizza.getToppings(); // returns ["pepperoni", "sausage", "hamburger"]
+
+var totalPrice = pizza.calculatePrice(); // tally up the total cost
+
 
 
 
