@@ -82,6 +82,8 @@ $(document).ready(function() {
   
   var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
   var toppingArray = []; // empty array to populate with values of checkboxes
+  var totalCost = 0;
+  var size = "";
   
   $("#checkPrice").click(function() {
     
@@ -97,22 +99,25 @@ $(document).ready(function() {
       }
     });
     
-    var size = $("#size").val(); // take size value (small, medium, etc)
+    size = $("#size").val(); // take size value (small, medium, etc)
     
     var pizza = new Pizza(size); // create new pizza object w/ size argument
     
     pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
-    var totalCost = pizza.calculatePrice();
+    totalCost = pizza.calculatePrice();
     
     console.log("Pizza Size: " + pizza.size + ". Pizza toppings: " + pizza.toppings[0] + ", " + pizza.toppings[1] + ", " + pizza.toppings[2]);
     
     $(".total").text("Total Cost: $ " + totalCost);
     
     $("h3.total").show();
+    $("#confirmPurchase").show();
   });
   
   $("#confirmPurchase").click(function() {
+    
+    $("#pizzaSize").text("Pizza Size: " + size);
     
     for(i=0; i < toppingArray.length; i++) {
       var value = "";
@@ -121,7 +126,8 @@ $(document).ready(function() {
         $(".ulToppings").append("<li>" + value + "</li>");
       }
     }
-    $("#receipt").show();
+    $("#totalPrice").text("Total Cost: $ " + totalCost);
+    $(".receipt").show();
   });
 });
 
