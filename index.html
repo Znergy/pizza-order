@@ -15,10 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Lato/Roboto/Sansita font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Sansita" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
   </head>
@@ -51,7 +47,7 @@
           <h2>Choose your pizza size:</h2>
           <div class="row">
             <div class="col-md-12">
-              <select name="size">
+              <select id="size" name="size">
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
@@ -62,10 +58,10 @@
         </div>
         <div class="submit-div">
           <h3>To check price, hit 'Check Price' button</h3>
-          <button id="submit" type="button">Check Price</button>
+          <button id="checkPrice" type="button">Check Price</button>
           <div class="row">
             <div class="col-md-12">
-              <h3 class="total">Your total is, $12.50</h3>
+              <h3 class="total"></h3>
             </div>
           </div>
         </div>
@@ -74,14 +70,14 @@
           <div class="row">
             <div class="col-md-12">
               <ul>
-                <li>Pizza Size: Small</li>
+                <li class="size-li">Pizza Size: Small</li>
                 <li>Pizza Toppings:</li>
-                  <ul>
+                  <ul class="ulToppings">
                     <li>Pepperoni</li>
                     <li>Sausage</li>
                     <li>Pineapple</li>
                   </ul>
-                <li>Total Cost: $12.50</li>
+                <li class="total"></li>
               </ul>
             </div>
           </div>
@@ -95,30 +91,8 @@
               <footer>Made by Ryan Jones. Copyright © 2017 Ryan Jones</footer>
               <footer>All Rights Reserved</footer>
             </div>
-            <!-- End of Copyright -->
-            <div class="col-md-6">
-              <!-- Font Awesome Icons for GitHub, etc. -->
-              <a class="btn btn-default" href="https://github.com/Znergy">
-                <i class="fa fa-github fa-2x" aria-hidden="true" title="GitHub"></i>
-              </a>
-              <a class="btn btn-primary" href="https://www.linkedin.com/in/ryan-jones-5996948b">
-                <i class="fa fa-linkedin fa-2x" aria-hidden="true" title="LinkedIn"></i>
-              </a>
-              <a class="btn btn-danger" href="https://www.codecademy.com/znergy">
-                <i class="fa fa-code fa-2x" aria-hidden="true" title="Codecademy"></i>
-              </a>
-              <a class="btn btn-info" href="https://twitter.com/ryanjonesirl">
-                <i class="fa fa-twitter fa-2x" aria-hidden="true" title="Twitter"></i>
-              </a>
-              <a class="btn btn-success" href="http://znergy.net">
-                <i class="fa fa-rss fa-2x" aria-hidden="true" title="Blog"></i>
-              </a>
-            </div>
-            <!-- End of col-md-4 -->
           </div>
-          <!-- End of Row -->
         </div>
-        <!-- End of Footer -->
       </div>
     </div>
     <!-- JQuery CDN -->
