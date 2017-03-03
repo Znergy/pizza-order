@@ -41,7 +41,7 @@ Pizza.prototype.calculatePrice = function() {
     totalCost = 7;
   } else if (this.size === "large") {
     totalCost = 10;
-  } else if (this.size === "extra-large" || this.size === "extra large") {
+  } else if (this.size === "extra-large") {
     totalCost = 12; 
   }
   
@@ -75,17 +75,6 @@ Pizza.prototype.calculatePrice = function() {
 
 /**** Front End Logic ****/
 
-//var pizza = new Pizza("large"); // new pizza instance
-//
-//pizza.setToppings(toppingArray); // saves toppingArray in the pizza.toppings array
-//
-//var toppingList = pizza.getToppings(); // returns ["pepperoni", "sausage", "hamburger"]
-//
-//var totalPrice = pizza.calculatePrice(); // tally up the total cost
-//
-//// display total price, toppings, etc in the receipt
-
-
 $(document).ready(function() {
   
   var idArray = ["checkbox1", "checkbox2", "checkbox3", "checkbox4", "checkbox5", "checkbox6"]; // id's for checkboxes
@@ -97,9 +86,9 @@ $(document).ready(function() {
     
     toppingArray = [];
     
-    // for each to cycle through checkboxes, save their values, and push each value to toppingArray (only if the checkbox has a value)
+    // for each to cycle through checkboxes
     idArray.forEach(function(id) {
-      var currentBox = ("#" + id).toString(); // 1st loop: currentBox = #checkbox1 
+      var currentBox = ("#" + id).toString();
       var value = $(currentBox).val();
       var isChecked = $(currentBox).is(':checked');
       if (isChecked === true) {
@@ -114,8 +103,6 @@ $(document).ready(function() {
     pizza.setToppings(toppingArray); // use a setter to pass our topping array
     
     totalCost = pizza.calculatePrice();
-    
-    console.log("Pizza Size: " + pizza.size + ". Pizza toppings: " + pizza.toppings[0] + ", " + pizza.toppings[1] + ", " + pizza.toppings[2]);
     
     $(".total").text("Total Cost: $ " + totalCost);
     
