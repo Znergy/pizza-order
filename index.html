@@ -7,7 +7,6 @@
 <html>
   <head>
     <title>Pizza Order</title>
-    <link rel="icon" type="image/png" href="favicon.ico" />
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="description" content="Web Application">
@@ -29,39 +28,65 @@
         <img class="img-responsive logo" src="img/logo.png" alt="logo"/>
         <h1>Pizza Order</h1>
       </div>
-      <div class="bg-black">
-        <div class="container">
-          <div class="footer">
-            <div class="row">
-              <div class="col-md-6">
-                <footer>Made by Ryan Jones. Copyright © 2017 Ryan Jones</footer>
-                <footer>All Rights Reserved</footer>
-              </div>
-              <!-- End of Copyright -->
-              <div class="col-md-6">
-                <!-- Font Awesome Icons for GitHub, etc. -->
-                <a class="btn btn-default" href="https://github.com/Znergy">
-                  <i class="fa fa-github fa-2x" aria-hidden="true" title="GitHub"></i>
-                </a>
-                <a class="btn btn-primary" href="https://www.linkedin.com/in/ryan-jones-5996948b">
-                  <i class="fa fa-linkedin fa-2x" aria-hidden="true" title="LinkedIn"></i>
-                </a>
-                <a class="btn btn-danger" href="https://www.codecademy.com/znergy">
-                  <i class="fa fa-code fa-2x" aria-hidden="true" title="Codecademy"></i>
-                </a>
-                <a class="btn btn-info" href="https://twitter.com/ryanjonesirl">
-                  <i class="fa fa-twitter fa-2x" aria-hidden="true" title="Twitter"></i>
-                </a>
-                <a class="btn btn-success" href="http://znergy.net">
-                  <i class="fa fa-rss fa-2x" aria-hidden="true" title="Blog"></i>
-                </a>
-              </div>
-              <!-- End of col-md-4 -->
-            </div>
-            <!-- End of Row -->
+      <div class="well">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="pizza-choice">Choose one of our specialty Pizzas</label>
+            <input id="pizzaChoice" type="text">
           </div>
-          <!-- End of Footer -->
         </div>
+        <div class="toppings">
+          <h2>Choose your toppings:</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li><input type="checkbox" id="checkbox1" value="pepperoni"> Pepperoni</li>
+                <li><input type="checkbox" id="checkbox2" value="sausage"> Sausage</li>
+                <li><input type="checkbox" id="checkbox3" value="hamburger"> Hamburger</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li><input type="checkbox" id="checkbox4" value="pineapple"> Pineapple</li>
+                <li><input type="checkbox" id="checkbox5" value="mushrooms"> Mushrooms</li>
+                <li><input type="checkbox" id="checkbox6" value="bacon"> Bacon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-md-6">
+              <footer>Made by Ryan Jones. Copyright © 2017 Ryan Jones</footer>
+              <footer>All Rights Reserved</footer>
+            </div>
+            <!-- End of Copyright -->
+            <div class="col-md-6">
+              <!-- Font Awesome Icons for GitHub, etc. -->
+              <a class="btn btn-default" href="https://github.com/Znergy">
+                <i class="fa fa-github fa-2x" aria-hidden="true" title="GitHub"></i>
+              </a>
+              <a class="btn btn-primary" href="https://www.linkedin.com/in/ryan-jones-5996948b">
+                <i class="fa fa-linkedin fa-2x" aria-hidden="true" title="LinkedIn"></i>
+              </a>
+              <a class="btn btn-danger" href="https://www.codecademy.com/znergy">
+                <i class="fa fa-code fa-2x" aria-hidden="true" title="Codecademy"></i>
+              </a>
+              <a class="btn btn-info" href="https://twitter.com/ryanjonesirl">
+                <i class="fa fa-twitter fa-2x" aria-hidden="true" title="Twitter"></i>
+              </a>
+              <a class="btn btn-success" href="http://znergy.net">
+                <i class="fa fa-rss fa-2x" aria-hidden="true" title="Blog"></i>
+              </a>
+            </div>
+            <!-- End of col-md-4 -->
+          </div>
+          <!-- End of Row -->
+        </div>
+        <!-- End of Footer -->
       </div>
     </div>
     <!-- JQuery CDN -->
