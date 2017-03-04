@@ -79,6 +79,7 @@ $(document).ready(function() {
   var totalCost = 0;
   var quantity = 0;
   var size = "";
+  var orderCount = 0;
   
   $("#checkPrice").click(function() {
     
@@ -106,29 +107,28 @@ $(document).ready(function() {
     
     totalCost = pizza.calculateSizeCost(pizza.quantity) + pizza.calculateToppingCost(); // get total cost of toppings and size
     
-    console.log(totalCost);
-    
-    $(".total").text("Total Cost: $ " + totalCost);
-    
-    $("h3.total").show();
-    $("#confirmPurchase").show();
-  });
-  
-  $("#confirmPurchase").click(function() {
-    
-    $(".ulToppings").empty();
-    $(".pizzaSize").text("Pizza size: " + size);
-    $(".pizzaQuantity").text("Quantity: " + quantity);
+    orderCount = orderCount + 1;
+
+    $("#ulOrder" + orderCount).append("<li>Pizza size: " + size + "</li>" +
+      "<li>Quantity: " + quantity + "</li>" +
+      "<li>Pizza Toppings:</li>" +
+      "<ul class=" + "ulToppings" + orderCount + "></ul>" +
+      "<li class='totalPrice'>Total Cost: $" + totalCost + "</li>");
     
     for(i=0; i < toppingArray.length; i++) {
       var value = "";
       if(toppingArray[i] != "") {
         value = toppingArray[i];
-        $(".ulToppings").append("<li>" + value + "</li>");
+        $(".ulToppings" + orderCount).append("<li>" + value + "</li>");
       }
     }
-    $(".totalPrice").text("Total Cost: $ " + totalCost);
-    $(".receipt").show();
+    
+    $("#confirmPurchase").show();
+  });
+  
+  $("#confirmPurchase").click(function() {
+    
+    
   });
 });
 
