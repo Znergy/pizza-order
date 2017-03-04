@@ -125,11 +125,6 @@ $(document).ready(function() {
     
     $("#confirmPurchase").show();
   });
-  
-  $("#confirmPurchase").click(function() {
-    
-    
-  });
 });
 
 
